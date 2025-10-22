@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modularoc</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+
+    <div class="overlay" data-overlay></div>
+
+
+
+    <div class="header-bottom">
+      <div class="container">
+
+        <a href="index.html" class="logo">
+          <img src="./assets/images/logo.png" alt="Homeverse logo">
+        </a>
+
+        <nav class="navbar" data-navbar>
+
+          <div class="navbar-top">
+
+            <a href="index.html" class="logo">
+              <img src="./assets/images/logo.png" alt="Homeverse logo">
+            </a>
+
+            <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+          </div>
+
+          <div class="navbar-bottom">
+            <ul class="navbar-list">
+
+              <li>
+                <a href="index.html" class="navbar-link" data-nav-link>Accueil</a>
+              </li>
+
+              <li>
+                <a href="index.html" class="navbar-link" data-nav-link>A propos</a>
+              </li>
+
+              <li>
+                <a href="index.html" class="navbar-link" data-nav-link>Solutions</a>
+              </li>
+
+              <li>
+                <a href="index.html" class="navbar-link" data-nav-link>Realisations</a>
+              </li>
+
+              <li>
+                <a href="index.html" class="navbar-link" data-nav-link>Actualités</a>
+              </li>
+
+              <li>
+                <a href="index.html" class="navbar-link" data-nav-link>Contact</a>
+              </li>
+
+              <li>
+                <a href="index.html" class="navbar-link" data-nav-link>
+                  <button class="back-btn">
+                    <ion-icon name="arrow-back-outline"></ion-icon>
+                    <span>Back</span>
+                  </button>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </nav>
+
+        <div class="header-bottom-actions">
+
+         
+
+        
+
+         
+
+          <button class="header-bottom-actions-btn" data-nav-open-btn aria-label="Open Menu">
+            <ion-icon name="menu-outline"></ion-icon>
+
+            <span>Menu</span>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+  </header>
+
+
+
+
+<style>
+  /* Bouton Back */
+.back-btn {
+  margin-left: 100px;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espace entre l'icône et le texte */
+  background: hsl(166.15deg 43.42% 55.73%); /* Couleur de fond */
+  color: var(--white); /* Couleur du texte */
+  border: none;
+  border-radius: 5px; /* Coins arrondis */
+  padding: 10px 15px; /* Padding intérieur */
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.back-btn:hover {
+  background: hsl(166.15deg 43.42% 55.73%); /* Couleur de fond au survol */
+}
+
+.back-btn ion-icon {
+  font-size: 18px; /* Taille de l'icône */
+}
+  /* Contact Us Section */
+.contact-us {
+  padding: 60px 0;
+  background: var(--cultured-2); /* Use your theme color */
+}
+
+.contact-us .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.contact-info {
+  background: var(--white); /* Use your theme color */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info .section-title {
+  margin-bottom: 20px;
+  color: var(--cadet-dark); /* Use your theme color */
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.contact-item ion-icon {
+  font-size: 24px;
+  color: var(--cadet); /* Use your theme color */
+}
+
+.contact-item p {
+  margin: 0;
+  color: var(--cadet); /* Use your theme color */
+}
+
+.contact-item a {
+  color: var(--cadet); /* Use your theme color */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: var(--cadet-dark); /* Darker color on hover */
+}
+
+.contact-btn {
+  margin-top: 20px;
+}
+
+.contact-form {
+  background: var(--white); /* Use your theme color */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .section-title {
+  margin-bottom: 20px;
+  color: var(--cadet-dark); /* Use your theme color */
+}
+
+
+/* Image à Droite */
+.contact-image {
+  flex: 1; /* Prendre l'espace disponible */
+  padding: 4px;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.house-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px; /* Rounded corners for the image */
+}
+</style>
+ 
+
+  <main>
+    
+
+    <!-- Contact Us Section -->
+    <section class="contact-us">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- Contact Information -->
+          <div class="contact-info">
+            <h2 class="h2 section-title">Contactez-nous</h2>
+
+            <div class="contact-item">
+              <ion-icon name="location-outline"></ion-icon>
+              <p>Amal II Nº53 Centre d’affaire Tit Mellil étage 3 – Tit Mellil Casablanca - Maroc</p>
+            </div>
+
+            <div class="contact-item">
+              <ion-icon name="time-outline"></ion-icon>
+              <p>Horaires : 8h30 - 18h30</p>
+            </div>
+
+            <div class="contact-item">
+              <ion-icon name="mail-outline"></ion-icon>
+              <p><a href="mailto:contact@modularoc.com">contact@modularoc.com</a>
+                <a href="mailto:elabbassi@modularoc.com">elabbassi@modularoc.com</a></p>
+              
+            </div>
+
+            <div class="contact-item">
+              <ion-icon name="call-outline"></ion-icon>
+              <p>
+                <a href="tel:+212661119430">+212 (0) 6 61 11 94 30</a><br>
+                <a href="tel:+212708678352">+212 (0)7 08 67 83 52</a>
+              </p>
+            </div>
+
+           
+          </div>
+          <div class="contact-image">
+            <img src="./assets/images/gg.jpg" alt="notre localisation" class="house-image">
+          </div>
+        </div>
+        
+      </div>
+    </section>
+  </main>
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="./assets/images/logo.png" alt="Homeverse logo">
+          </a>
+
+          <p class="section-text">
+            ETUDE , CONCEPTION , EXPERTISE ET REALISATION BATIMENTS MODULAIRE
+          </p>
+
+          <ul class="contact-list">
+
+            <li>
+              <a href="#" class="contact-link">
+                <ion-icon name="location-outline"></ion-icon>
+
+                <address>Amal II Nº53 Centre d’affaire Tit Mellil étage 3 – Tit Mellil Casablanca- Maroc</address>
+              </a>
+            </li>
+
+            <li>
+              <a href="tel:+0123456789" class="contact-link">
+                <ion-icon name="call-outline"></ion-icon>
+
+                <span>+212 (0) 6 61 11 94 30</span>
+
+              </a>
+            </li>
+            <li>
+              <a href="tel:+0123456789" class="contact-link">
+                <ion-icon name="call-outline"></ion-icon>
+
+                <span>+212 (0)7 08 67 83 52</span>
+
+              </a>
+            </li>
+
+            <li>
+              <a href="mailto:contact@homeverse.com" class="contact-link">
+                <ion-icon name="mail-outline"></ion-icon>
+
+                <span>elabbassi@modularoc.com
+
+                </span>
+              </a>
+            </li>
+
+          </ul>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="footer-link-box">
+
+          
+
+          <a href="#" class="map">
+            <img src="./assets/images/mapp.PNG" alt="notre localisation">
+          </a>
+
+
+
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2025 . Tous les droits sont réservés
+        </p>
+
+      </div>
+    </div>
+
+  </footer>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

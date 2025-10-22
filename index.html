@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modularoc</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo-light.png" type="image/x-icon">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+</head>
+<style>
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  animation: pulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+  background-color: #128c7e;
+  transform: scale(1.1);
+  animation: none;
+  color: #FFF;
+  text-decoration: none;
+}
+
+.whatsapp-float ion-icon {
+  font-size: 28px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 24px;
+  }
+  
+  .whatsapp-float ion-icon {
+    font-size: 24px;
+  }
+}
+
+
+
+
+
+.property-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.property-list {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto; /* Garde le défilement horizontal existant */
+  padding: 20px 0;
+  scroll-behavior: smooth;
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 10;
+  transition: background-color 0.3s;
+}
+
+.nav-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn {
+  left: 0;
+}
+
+.next-btn {
+  right: 0;
+}
+
+@media (max-width: 768px) {
+  .nav-btn {
+    padding: 8px;
+    font-size: 16px;
+  }
+}
+
+
+
+</style>
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+
+    <div class="overlay" data-overlay></div>
+
+    <div class="header-top">
+      <div class="container">
+
+        <ul class="header-top-list">
+
+          <li>
+            <a href="mailto:contact@modularoc.com" class="header-top-link">
+              <ion-icon name="mail-outline"></ion-icon>
+
+              <span>contact@modularoc.com</span>&emsp;
+              <a href="mailto:elabbassi@modularoc.com" class="header-top-link">
+                <ion-icon name="mail-outline"></ion-icon>
+  
+              <span>elabbassi@modularoc.com</span>
+              </a>
+            </a>
+          </li>
+
+          
+
+        </ul>
+
+        <div class="wrapper">
+          
+
+          <a href="contact-us.html"> <!-- Replace with your actual contact page URL -->
+            <button class="header-top-btn">Obtenir un devis</button>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="header-bottom">
+      <div class="container">
+
+        <a href="#" class="logo">
+          <img src="./assets/images/logo.png" alt="Homeverse logo">
+        </a>
+
+        <nav class="navbar" data-navbar>
+
+          <div class="navbar-top">
+
+            <a href="#" class="logo">
+              <img src="./assets/images/logo.png" alt="Homeverse logo">
+            </a>
+
+            <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+          </div>
+
+          <div class="navbar-bottom">
+            <ul class="navbar-list">
+
+              <li>
+                <a href="#home" class="navbar-link" data-nav-link>Accueil</a>
+              </li>
+
+              <li>
+                <a href="#about" class="navbar-link" data-nav-link>A propos</a>
+              </li>
+
+              <li>
+                <a href="#service" class="navbar-link" data-nav-link>Solutions</a>
+              </li>
+
+              <li>
+                <a href="#property" class="navbar-link" data-nav-link>Realisations</a>
+              </li>
+
+              <li>
+                <a href="#blog" class="navbar-link" data-nav-link>Actualités</a>
+              </li>
+
+              <li>
+                <a href="contact-us.html" class="navbar-link" data-nav-link>Contact</a>
+              </li>
+
+              <li>
+                <a href="./catalogue/index.html" class="btn" target="_blank" data-nav-link><b>Voir Catalogue</b></a>
+              </li>
+              
+            </ul>
+          </div>
+
+        </nav>
+
+        <div class="header-bottom-actions">
+
+         
+
+        
+
+         
+
+          <button class="header-bottom-actions-btn" data-nav-open-btn aria-label="Open Menu">
+            <ion-icon name="menu-outline"></ion-icon>
+
+            <span>Menu</span>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+  </header>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="hero" id="home">
+        <div class="container">
+
+          <div class="hero-content">
+
+            <p class="hero-subtitle">
+              <ion-icon name="home"></ion-icon>
+
+              <span>Construction Modulaire</span>
+            </p>
+
+            <h2 class="h1 hero-title">Vos projets, nos solutions</h2>
+
+            <p class="hero-text">
+             
+              MODULAROC conçoit et réalise des bâtiments modulaires sur-mesure, allant de modules simples à des constructions architecturées ou des shelters techniques. Que ce soit au Maroc ou à l’export, nos solutions en kit innovantes s’adaptent à tous vos besoins, même les plus audacieux.
+
+              Du bungalow fonctionnel aux constructions personnalisées haut de gamme, nos produits répondent à vos attentes tout en vous offrant des avantages clés : flexibilité, expertise technique et assistance dédiée.
+              
+              Nos équipes sont à votre écoute pour proposer des solutions adaptées à vos projets et à vos souhaits.</p>
+
+           <a href="#property"><button class="btn">Nos réalisations</button>
+</a> 
+          </div>
+
+          <figure class="hero-banner">
+            <img src="./assets/images/ll.png" alt="Modern house model" class="w-100">
+          </figure>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #ABOUT
+      -->
+
+      <section class="about" id="about">
+        <div class="container">
+
+          <figure class="about-banner">
+            <img src="./assets/images/about-banner-1.png" alt="House interior">
+
+          </figure>
+
+          <div class="about-content">
+
+            <p class="section-subtitle">A propos de MODULAROC</p>
+
+            <h2 class="h2 section-title">Construction modulaire</h2>
+
+            <p class="about-text">
+              MODULAROC spécialisée constructions modulaires, vous offre réactivité et souplesse pour la mise en œuvre de constructions modulaires confortables et fonctionnelles. Conseil, étude, conception, transport et montage de votre bâtiment, coordination des travaux…
+            </p>
+
+            <ul class="about-list">
+
+              <li class="about-item">
+                <div class="about-item-icon">
+                  <ion-icon name="home-outline"></ion-icon>
+                </div>
+
+                <p class="about-item-text">Maisons Modulaires Personnalisables</p>
+              </li>
+
+              <li class="about-item">
+                <div class="about-item-icon">
+                  <ion-icon name="leaf-outline"></ion-icon>
+                </div>
+
+                <p class="about-item-text">Solutions Modulaires Écologiques</p>
+              </li>
+
+              <li class="about-item">
+                <div class="about-item-icon">
+                  <ion-icon name="wine-outline"></ion-icon>
+                </div>
+
+                <p class="about-item-text">Solutions Modulaires Sur Mesure pour Vous</p>
+              </li>
+
+              <li class="about-item">
+                <div class="about-item-icon">
+                  <ion-icon name="shield-checkmark-outline"></ion-icon>
+                </div>
+
+                <p class="about-item-text">Conception d'Espace Innovante</p>
+              </li>
+
+            </ul>
+
+            <p class="callout">
+          <b>NOS ENGAGEMENTS :</b>   
+
+Écoute et satisfaction de vos exigences.
+
+Réactivité et respect des délais.
+
+Assistance complète lors des installations.</p>
+<p class="callout"><b>NOTRE FORCE :</b>
+
+Accompagnement de A à Z : de la conception à la réalisation, avec suivi personnalisé.</p>
+<p class="callout"><b>VOS OBJECTIFS SONT LES NÔTRES :</b>
+
+Satisfaction client.
+
+Maîtrise des urgences.
+
+Solutions sur-mesure et produits innovants.</p>
+
+
+
+         
+
+            <a href="#service" class="btn">Nos solutions</a>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #SOLUTIONS
+      -->
+
+      <section class="service" id="service">
+        <div class="container">
+
+          <p class="section-subtitle">Solutions</p>
+
+          <h2 class="h2 section-title">Nos Solutions
+          <ul class="service-list">
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <img src="./assets/images/service-1.png" alt="Service icon">
+                </div>
+
+                <h3 class="h3 card-title">
+                  <a href="#">Etude, Conception et Expertise</a>
+                </h3>
+
+                <p class="card-text">
+                  Chez MODULAROC, nous combinons innovation, qualité et expertise pour concevoir des constructions modulaires adaptées à vos besoins. Chaque projet étudiait avec précision, transformant vos idées en espaces de vie modernes et fonctionnels. Une approche sur-mesure pour des résultats à la hauteur de vos attentes.
+                </p>
+
+                <a href="#property" class="card-link">
+                  <span>Nos réalisations</span>
+
+                  <ion-icon name="arrow-forward-outline"></ion-icon>
+                </a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <img src="./assets/images/service-2.png" alt="Service icon">
+                </div>
+
+                <h3 class="h3 card-title">
+                  <a href="#">Logements modulaires</a>
+                </h3>
+
+                <p class="card-text">
+                  La solution sur-mesure pour vos logements secondaires. Idéale pour les résidences d'appoint, les hébergements ou la location saisonnière, MODULAROC propose des logements modulaires personnalisables, rapides à installer et parfaitement adaptés à vos besoins.
+                </p>
+
+                <a href="#property" class="card-link">
+                  <span>Nos réalisations</span>
+
+                  <ion-icon name="arrow-forward-outline"></ion-icon>
+                </a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <img src="./assets/images/service-3.png" alt="Service icon">
+                </div>
+
+                <h3 class="h3 card-title">
+                  <a href="#">Bureaux et Bungalows chantier</a>
+                </h3>
+
+                <p class="card-text">
+                  MODULAROC propose des bureaux préfabriqués sur mesure et des bungalows de chantier pour répondre à tous vos projets. Espaces de travail temporaires, bases vie fonctionnelles ou extensions modulaires : nos solutions allient rapidité, qualité et personnalisation. Bungalows sanitaires livrés montés ou en kit, avec équipements prêts à l'assemblage, parfaitement adaptés à vos besoins professionnels ou de chantier.
+                </p>
+
+                <a href="#property" class="card-link">
+                  <span>Nos réalisations</span>
+
+                  <ion-icon name="arrow-forward-outline"></ion-icon>
+                </a>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #realisations
+      -->
+
+   <section class="property" id="property">
+  <div class="container">
+    <p class="section-subtitle">Réalisations</p>
+    <h2 class="h2 section-title">Nos réalisations</h2>
+    
+    <div class="property-wrapper">
+      <button class="nav-btn prev-btn" aria-label="Previous"><ion-icon name="arrow-back-outline"></ion-icon></button>
+      <ul class="property-list has-scrollbar">
+        <li>
+          <div class="property-card">
+            <figure class="card-banner">
+              <a href="#">
+                <img src="./assets/images/BV.png" alt="New Apartment Nice View" class="w-100">
+              </a>
+            </figure>
+            <div class="card-content">
+              <h3 class="h3 card-title"><a href="#">Bureau de Vente</a></h3>
+              <p class="card-text">Bureau de vente contemporain avec une structure noire élégante et de grandes baies vitrées lumineuses. L’intérieur, aménagé avec des sièges confortables, offre un espace accueillant pour clients et partenaires.</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="property-card">
+            <figure class="card-banner">
+              <a href="#">
+                <img src="./assets/images/bloc.png" alt="Comfortable Apartment" class="w-100">
+              </a>
+            </figure>
+            <div class="card-content">
+              <h3 class="h3 card-title"><a href="#">Bloc à usages divers</a></h3>
+              <p class="card-text">Ce bloc modulaire à usages divers présente une structure compacte et robuste en panneaux blancs, parfait pour divers besoins sur site. Équipé d’une fenêtre grillagée pour la sécurité et d’une porte large. </p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="property-card">
+            <figure class="card-banner">
+              <a href="#">
+                <img src="./assets/images/ii.PNG" alt="Luxury villa in Rego Park" class="w-100">
+              </a>
+            </figure>
+            <div class="card-content">
+              <h3 class="h3 card-title"><a href="#">Guichet Modulaire</a></h3>
+              <p class="card-text">Ce guichet modulaire se distingue par sa structure compacte et robuste en panneaux métalliques gris, idéale pour les services d’accueil ou de contrôle. Équipé de fenêtres grillagées pour la sécurité.</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="property-card">
+            <figure class="card-banner">
+              <a href="#">
+                <img src="./assets/images/chan.png" alt="Modern Apartments" class="w-100">
+              </a>
+            </figure>
+            <div class="card-content">
+              <h3 class="h3 card-title"><a href="#">Bâtiment de chantier</a></h3>
+              <p class="card-text">Ce bâtiment de chantier moderne présente une structure robuste en panneaux blancs, idéale pour les sites de construction. Équipé d’une fenêtre grillagée pour la sécurité et d’une porte large permettant un accès facile.</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="property-card">
+            <figure class="card-banner">
+              <a href="#">
+                <img src="./assets/images/BVVV.png" alt="New Apartment Nice View" class="w-100">
+              </a>
+            </figure>
+            <div class="card-content">
+              <h3 class="h3 card-title"><a href="#">Bureau administratif</a></h3>
+              <p class="card-text">Bureau administratif moderne doté de grandes fenêtres lumineuses et d’un escalier d’accès extérieur, entouré d’un gazon soigné, offrant un cadre professionnel et accueillant pour vos projets immobiliers.</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="property-card">
+            <figure class="card-banner">
+              <a href="#">
+                <img src="./assets/images/bureau vente.png" alt="New Apartment Nice View" class="w-100">
+              </a>
+            </figure>
+            <div class="card-content">
+              <h3 class="h3 card-title"><a href="#">Bureau de Vente</a></h3>
+              <p class="card-text">Bureau de vente moderne et spacieux, doté de grandes fenêtres offrant une vue agréable, est conçu pour accueillir vos projets immobiliers avec confort et professionnalisme.</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="property-card">
+            <figure class="card-banner">
+              <a href="#">
+                <img src="./assets/images/7.PNG" alt="New Apartment Nice View" class="w-100">
+              </a>
+            </figure>
+            <div class="card-content">
+              <h3 class="h3 card-title"><a href="#">Bureau administratif</a></h3>
+              <p class="card-text">Espace administratif moderne, avec couloirs lumineux et bureaux fonctionnels, cet espace est conçu pour optimiser votre gestion administrative. Idéal pour une productivité accrue.</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <button class="nav-btn next-btn" aria-label="Next"><ion-icon name="arrow-forward-outline"></ion-icon></button>
+    </div>
+    <div class="catalog-button-container">
+      <a href="catalogue/index.html" target="_blank" class="catalog-button">Voir le catalogue</a>
+    </div>
+  </div>
+</section>
+
+
+
+      <!-- 
+        - #FEATURES
+      -->
+
+      <section class="features">
+        <div class="container">
+
+          <p class="section-subtitle"> Équipements</p>
+
+          <h2 class="h2 section-title">Nos Équipements</h2>
+
+          <ul class="features-list">
+
+            <li>
+              <a href="#features" class="features-card">
+
+                <div class="card-icon">
+                  <ion-icon name="car-sport-outline"></ion-icon>
+                </div>
+
+                <h3 class="card-title">Éclairage LED Économique</h3>
+
+                
+
+              </a>
+            </li>
+
+            <li>
+              <a href="#features" class="features-card">
+
+                <div class="card-icon">
+                  <ion-icon name="water-outline"></ion-icon>
+                </div>
+
+                <h3 class="card-title">Salle de Bain</h3>
+
+                
+              </a>
+            </li>
+
+            <li>
+              <a href="#features" class="features-card">
+
+                <div class="card-icon">
+                  <ion-icon name="shield-checkmark-outline"></ion-icon>
+                </div>
+
+                <h3 class="card-title">Cuisine Équipée</h3>
+
+                
+
+              </a>
+            </li>
+
+            <li>
+              <a href="#features" class="features-card">
+
+                <div class="card-icon">
+                  <ion-icon name="fitness-outline"></ion-icon>
+                </div>
+
+                <h3 class="card-title">Bureau Modulaire </h3>
+
+              
+              </a>
+            </li>
+
+            <li>
+              <a href="#features" class="features-card">
+
+                <div class="card-icon">
+                  <ion-icon name="library-outline"></ion-icon>
+                </div>
+
+                <h3 class="card-title">Panneaux Solaires</h3>
+
+               
+
+              </a>
+            </li>
+
+            <li>
+              <a href="#features" class="features-card">
+
+                <div class="card-icon">
+                  <ion-icon name="bed-outline"></ion-icon>
+                </div>
+
+                <h3 class="card-title">Systèmes de Sécurité</h3>
+
+                
+
+              </a>
+            </li>
+
+            <li>
+              <a href="#features" class="features-card">
+
+                <div class="card-icon">
+                  <ion-icon name="home-outline"></ion-icon>
+                </div>
+
+                <h3 class="card-title">Éclairage LED Économique</h3>
+
+                
+
+              </a>
+            </li>
+
+            <li>
+              <a href="#features" class="features-card">
+
+                <div class="card-icon">
+                  <ion-icon name="football-outline"></ion-icon>
+                </div>
+
+                <h3 class="card-title">Climatisation et Chauffage</h3>
+
+              
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #BLOG
+      -->
+
+      <section class="blog" id="blog">
+        <div class="container">
+
+          <p class="section-subtitle">Actualités</p>
+
+          <h2 class="h2 section-title">Actualités</h2>
+
+          <ul class="blog-list has-scrollbar">
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner">
+                  <img src="./assets/images/property-2.jpg" alt="The Most Inspiring Interior Design Of 2021" class="w-100">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-content-top">
+
+                    <ul class="card-meta-list">
+
+                      <li>
+                        <a href="Rim.html" class="card-meta-link">
+                          <ion-icon name="person"></ion-icon>
+
+                          <span>Par: RimAdmin</span>
+                        </a>
+                      </li>
+
+
+                    </ul>
+
+                    <h3 class="h3 blog-title">
+                      <a href="Rim.html" >Construction Modulaire au Maroc : Des Solutions Pertinentes</a>
+                    </h3>
+
+                  </div>
+
+                  <div class="blog-content-bottom">
+                    <div class="publish-date">
+                      <ion-icon name="calendar"></ion-icon>
+
+                      <time datetime="2022-27-04">Jan 23, 2025</time>
+                    </div>
+
+                    <a href="Rim.html"  class="read-more-btn">Read More</a>
+                  </div>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner">
+                  <img src="./assets/images/Capture.PNG" alt="Recent Commercial Real Estate Transactions" class="w-100">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-content-top">
+
+                    <ul class="card-meta-list">
+
+                      <li>
+                        <a href="hanane.html" class="card-meta-link">
+                          <ion-icon name="person"></ion-icon>
+
+                          <span>Par: Hanane Farouk</span>
+                        </a>
+                      </li>
+
+                 
+
+                    </ul>
+
+                    <h3 class="h3 blog-title">
+                      <a href="hanane.html">La Construction Modulaire : L’Avenir de l’Immobilier</a>
+                    </h3>
+
+                  </div>
+
+                  <div class="blog-content-bottom">
+                    <div class="publish-date">
+                      <ion-icon name="calendar"></ion-icon>
+
+                      <time datetime="2022-27-04">Fev 26, 2025</time>
+                    </div>
+
+                    <a href="hanane.html" class="read-more-btn">Read More</a>
+                  </div>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner">
+                  <img src="./assets/images/g.PNG" alt="Renovating a Living Room? Experts Share Their Secrets"
+                    class="w-100">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-content-top">
+
+                    <ul class="card-meta-list">
+
+                      <li>
+                        <a href="taha.html" class="card-meta-link">
+                          <ion-icon name="person"></ion-icon>
+
+                          <span>Par: TahaEL06</span>
+                        </a>
+                      </li>
+
+                     
+
+                    </ul>
+
+                    <h3 class="h3 blog-title">
+                      <a href="taha.html">Les Avantages des Espaces de Travail Modulaires</a>
+                    </h3>
+
+                  </div>
+
+                  <div class="blog-content-bottom">
+                    <div class="publish-date">
+                      <ion-icon name="calendar"></ion-icon>
+
+                      <time datetime="2022-27-04">Avr 27, 2025</time>
+                    </div>
+
+                    <a href="taha.html" class="read-more-btn">Read More</a>
+                  </div>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #CTA
+      -->
+
+      <section class="cta">
+        <div class="container">
+
+          <div class="cta-card">
+            <div class="card-content">
+              <h2 class="h2 card-title">À la recherche d'une solution modulaire sur mesure ?</h2>
+
+              <p class="card-text">Nous vous accompagnons pour concrétiser vos projets, qu'il s'agisse d'une maison, d'un bureau ou d'un espace temporaire.</p>
+            </div>
+<a href="catalogue/index.html" target="_blank"><button class="btn cta-btn">
+              <span>Voir Notre Catalogue</span>
+
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </button></a>
+            
+          </div>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/212661119430?text=Bonjour!%20Je%20suis%20intéressé%20par%20vos%20solutions%20de%20construction%20modulaire.%20Pouvez-vous%20me%20donner%20plus%20d'informations?" 
+   class="whatsapp-float" 
+   target="_blank" 
+   aria-label="Contacter via WhatsApp">
+  <ion-icon name="logo-whatsapp"></ion-icon>
+</a>
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="./assets/images/logo.png" alt="Homeverse logo">
+          </a>
+
+          <p class="section-text">
+            ETUDE , CONCEPTION , EXPERTISE ET REALISATION BATIMENTS MODULAIRE
+          </p>
+
+          <ul class="contact-list">
+
+            <li>
+              <a href="#" class="contact-link">
+                <ion-icon name="location-outline"></ion-icon>
+
+                <address>Amal II Nº53 Centre d’affaire Tit Mellil étage 3 – Tit Mellil Casablanca- Maroc</address>
+              </a>
+            </li>
+
+            <li>
+              <a href="tel:+212 (0) 6 61 11 94 30" class="contact-link">
+                <ion-icon name="call-outline"></ion-icon>
+
+                <span>+212 (0) 6 61 11 94 30</span>
+
+              </a>
+            </li>
+            <li>
+              <a href="+212 (0)7 08 67 83 52" class="contact-link">
+                <ion-icon name="call-outline"></ion-icon>
+
+                <span>+212 (0)7 08 67 83 52</span>
+
+              </a>
+            </li>
+
+            <li>
+              <a href="mailto:contact@modularoc.com" class="contact-link">
+                <ion-icon name="mail-outline"></ion-icon>
+
+                <span>contact@modularoc.com
+
+                </span>
+              </a>
+            </li>
+
+          </ul>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="footer-link-box">
+
+          
+
+          <a href="#" class="map">
+            <img src="./assets/images/mapp.PNG" alt="notre localisation">
+          </a>
+
+
+
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2025 . Tous les droits sont réservés
+        </p>
+
+      </div>
+    </div>
+
+  </footer>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const propertyList = document.querySelector('.property-list');
+  const prevBtn = document.querySelector('.prev-btn');
+  const nextBtn = document.querySelector('.next-btn');
+
+  const scrollAmount = 300; // Ajustez cette valeur selon la largeur des cartes
+
+  nextBtn.addEventListener('click', () => {
+    propertyList.scrollLeft += scrollAmount;
+  });
+
+  prevBtn.addEventListener('click', () => {
+    propertyList.scrollLeft -= scrollAmount;
+  });
+});
+</script>
+</html>
